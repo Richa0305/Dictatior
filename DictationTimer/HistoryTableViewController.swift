@@ -7,19 +7,42 @@
 //
 
 import UIKit
+import CoreData
 
 class HistoryTableViewController: UITableViewController {
 
+    let appDelegare = UIApplication.shared.delegate as! AppDelegate
+    var historyArr = [HistoryModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let context = appDelegare.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "History")
+        //request.predicate = NSPredicate(format: "age = %@", "12")
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try context.fetch(request)
+            var count = 0
+                for data in result as! [NSManagedObject] {
+                    let history = HistoryModel()
+                    history.duration = data.value(forKey: "duration") as! String
+                    history.dictation = data.value(forKey: "dictation") as! String
+                    history.confidenceScore = data.value(forKey: "confidencescore") as! Float
+                    historyArr.append(history)
+                    count += 1
+                }
+            if count == result.count{
+                historyArr.reverse()
+            }
+            
+        } catch {
+            
+            print("Failed")
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -29,23 +52,27 @@ class HistoryTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        return historyArr.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HistoryTableViewCell
+        
+        cell.dictationLabel.text = historyArr[indexPath.row].dictation
+        cell.durationLabel.text =  "\(historyArr[indexPath.row].duration) seconds"
+        cell.confidenceScoreLabel.text = "Confidence Score : \((historyArr[indexPath.row].confidenceScore) * 100)%"
+        cell.progressBarView.progress = historyArr[indexPath.row].confidenceScore
         return cell
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.
@@ -92,4 +119,8 @@ class HistoryTableViewController: UITableViewController {
     }
     */
 
+    @IBAction func doneAction(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
 }

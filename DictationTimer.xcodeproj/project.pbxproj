@@ -3,10 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		93B2E57BAF71A37CD7CF278D /* Pods_DictationTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3599DA72E8975EE87753CB90 /* Pods_DictationTimer.framework */; };
+		DA91EC9D20B8318D00C232DF /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA91EC9C20B8318D00C232DF /* FirebaseCore.framework */; };
+		DAB9671F20B84ABE00CBBAA3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAB9671E20B8496E00CBBAA3 /* GoogleService-Info.plist */; };
+		DACEAA6720B7F24600E2A2EB /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACEAA6620B7F24600E2A2EB /* Reachability.swift */; };
+		DAE5A91B20B8343400AE9684 /* GoogleToolboxForMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE5A91A20B8343400AE9684 /* GoogleToolboxForMac.framework */; };
+		EA67F5C720B6DABE003C1529 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA67F5C620B6DABE003C1529 /* HistoryTableViewController.swift */; };
+		EA7A241320B7177600003041 /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7A241220B7177600003041 /* HistoryModel.swift */; };
+		EA7A241520B71E8200003041 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7A241420B71E8200003041 /* HistoryTableViewCell.swift */; };
 		EA8FF24520B583A700EA8566 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8FF24420B583A700EA8566 /* AppDelegate.swift */; };
 		EA8FF24720B583A700EA8566 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8FF24620B583A700EA8566 /* ViewController.swift */; };
 		EA8FF24A20B583A700EA8566 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA8FF24820B583A700EA8566 /* Main.storyboard */; };
@@ -16,7 +24,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EA8FF24120B583A700EA8566 /* DictationTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DictationTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3599DA72E8975EE87753CB90 /* Pods_DictationTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DictationTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DA8C48A6BD5BE0F6D4EF509 /* Pods-DictationTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DictationTimer.release.xcconfig"; path = "Pods/Target Support Files/Pods-DictationTimer/Pods-DictationTimer.release.xcconfig"; sourceTree = "<group>"; };
+		DA91EC9C20B8318D00C232DF /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAB9671E20B8496E00CBBAA3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DACEAA6620B7F24600E2A2EB /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		DAE5A91A20B8343400AE9684 /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA67F5C620B6DABE003C1529 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
+		EA7A241220B7177600003041 /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
+		EA7A241420B71E8200003041 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		EA8FF24120B583A700EA8566 /* Dictatior.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dictatior.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA8FF24420B583A700EA8566 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA8FF24620B583A700EA8566 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EA8FF24920B583A700EA8566 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -24,6 +41,7 @@
 		EA8FF24E20B583A800EA8566 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA8FF25120B583A800EA8566 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA8FF25320B583A800EA8566 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7ABF99E7AAB58AAFFA1C325 /* Pods-DictationTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DictationTimer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DictationTimer/Pods-DictationTimer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,24 +49,48 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAE5A91B20B8343400AE9684 /* GoogleToolboxForMac.framework in Frameworks */,
+				DA91EC9D20B8318D00C232DF /* FirebaseCore.framework in Frameworks */,
+				93B2E57BAF71A37CD7CF278D /* Pods_DictationTimer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8DA855A50FAE7D48859401BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DAE5A91A20B8343400AE9684 /* GoogleToolboxForMac.framework */,
+				DA91EC9C20B8318D00C232DF /* FirebaseCore.framework */,
+				3599DA72E8975EE87753CB90 /* Pods_DictationTimer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AA4D344FEC08AC89FD7D61CC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F7ABF99E7AAB58AAFFA1C325 /* Pods-DictationTimer.debug.xcconfig */,
+				6DA8C48A6BD5BE0F6D4EF509 /* Pods-DictationTimer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		EA8FF23820B583A700EA8566 = {
 			isa = PBXGroup;
 			children = (
 				EA8FF24320B583A700EA8566 /* DictationTimer */,
 				EA8FF24220B583A700EA8566 /* Products */,
+				AA4D344FEC08AC89FD7D61CC /* Pods */,
+				8DA855A50FAE7D48859401BE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		EA8FF24220B583A700EA8566 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EA8FF24120B583A700EA8566 /* DictationTimer.app */,
+				EA8FF24120B583A700EA8566 /* Dictatior.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,13 +98,18 @@
 		EA8FF24320B583A700EA8566 /* DictationTimer */ = {
 			isa = PBXGroup;
 			children = (
+				DAB9671E20B8496E00CBBAA3 /* GoogleService-Info.plist */,
 				EA8FF24420B583A700EA8566 /* AppDelegate.swift */,
 				EA8FF24620B583A700EA8566 /* ViewController.swift */,
+				EA67F5C620B6DABE003C1529 /* HistoryTableViewController.swift */,
 				EA8FF24820B583A700EA8566 /* Main.storyboard */,
 				EA8FF24E20B583A800EA8566 /* Assets.xcassets */,
 				EA8FF25020B583A800EA8566 /* LaunchScreen.storyboard */,
 				EA8FF25320B583A800EA8566 /* Info.plist */,
 				EA8FF24B20B583A700EA8566 /* DictationTimer.xcdatamodeld */,
+				EA7A241220B7177600003041 /* HistoryModel.swift */,
+				EA7A241420B71E8200003041 /* HistoryTableViewCell.swift */,
+				DACEAA6620B7F24600E2A2EB /* Reachability.swift */,
 			);
 			path = DictationTimer;
 			sourceTree = "<group>";
@@ -74,9 +121,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EA8FF25620B583A800EA8566 /* Build configuration list for PBXNativeTarget "DictationTimer" */;
 			buildPhases = (
+				B022D5715DCDAB57A1C57F25 /* [CP] Check Pods Manifest.lock */,
 				EA8FF23D20B583A700EA8566 /* Sources */,
 				EA8FF23E20B583A700EA8566 /* Frameworks */,
 				EA8FF23F20B583A700EA8566 /* Resources */,
+				E07926562A352B00C9C97459 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -84,7 +133,7 @@
 			);
 			name = DictationTimer;
 			productName = DictationTimer;
-			productReference = EA8FF24120B583A700EA8566 /* DictationTimer.app */;
+			productReference = EA8FF24120B583A700EA8566 /* Dictatior.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -99,11 +148,12 @@
 				TargetAttributes = {
 					EA8FF24020B583A700EA8566 = {
 						CreatedOnToolsVersion = 9.3;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
 			buildConfigurationList = EA8FF23C20B583A700EA8566 /* Build configuration list for PBXProject "DictationTimer" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -126,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA8FF25220B583A800EA8566 /* LaunchScreen.storyboard in Resources */,
+				DAB9671F20B84ABE00CBBAA3 /* GoogleService-Info.plist in Resources */,
 				EA8FF24F20B583A800EA8566 /* Assets.xcassets in Resources */,
 				EA8FF24A20B583A700EA8566 /* Main.storyboard in Resources */,
 			);
@@ -133,11 +184,56 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B022D5715DCDAB57A1C57F25 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DictationTimer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E07926562A352B00C9C97459 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DictationTimer/Pods-DictationTimer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DictationTimer/Pods-DictationTimer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EA8FF23D20B583A700EA8566 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DACEAA6720B7F24600E2A2EB /* Reachability.swift in Sources */,
+				EA7A241520B71E8200003041 /* HistoryTableViewCell.swift in Sources */,
+				EA67F5C720B6DABE003C1529 /* HistoryTableViewController.swift in Sources */,
+				EA7A241320B7177600003041 /* HistoryModel.swift in Sources */,
 				EA8FF24720B583A700EA8566 /* ViewController.swift in Sources */,
 				EA8FF24D20B583A700EA8566 /* DictationTimer.xcdatamodeld in Sources */,
 				EA8FF24520B583A700EA8566 /* AppDelegate.swift in Sources */,
@@ -217,7 +313,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -271,28 +367,25 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		EA8FF25720B583A800EA8566 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7ABF99E7AAB58AAFFA1C325 /* Pods-DictationTimer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LF5DXGP726;
+				DEVELOPMENT_TEAM = ZHF752NSR5;
 				INFOPLIST_FILE = DictationTimer/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = richa.shivhari.DictationTimer;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = richa.shivhari.dictatior;
+				PRODUCT_NAME = Dictatior;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -300,17 +393,15 @@
 		};
 		EA8FF25820B583A800EA8566 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DA8C48A6BD5BE0F6D4EF509 /* Pods-DictationTimer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LF5DXGP726;
+				DEVELOPMENT_TEAM = ZHF752NSR5;
 				INFOPLIST_FILE = DictationTimer/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = richa.shivhari.DictationTimer;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = richa.shivhari.dictatior;
+				PRODUCT_NAME = Dictatior;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
