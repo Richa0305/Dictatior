@@ -24,22 +24,20 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, UIActionShee
     var countdownTimer = Timer()
     var speechRecognizer:SFSpeechRecognizer!
     var bannerView : GADBannerView!
-    
+    var defaultLanguage = "en-au"
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
     var totalTime = 0
+    var timeLimit = 0
     var confidenceForText = Array<Float>()
     var currentConfidenceScore:Float = 0.0
     let appDelegare = UIApplication.shared.delegate as! AppDelegate
+    var showAd = true
     override func viewDidLoad() {
         super.viewDidLoad()
         confidenceProgressView.transform = confidenceProgressView.transform.scaledBy(x: 1, y: 5)
-        // Do any additional setup after loading the view, typically from a nib.
-        let defaultLanguage = "en-au";
-        setupSpeechRecorder(language: defaultLanguage)
-        
-        // setup banner ad  
+        // setup banner ad
         bannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
         bannerView.frame  = CGRect(x: 0, y: view.bounds.height - bannerView.frame.height, width: bannerView.frame.size.width, height: bannerView.frame.size.height)
         bannerView.delegate = self
@@ -87,8 +85,9 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, UIActionShee
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        saveButton.isEnabled = false
-        saveButton.setTitleColor(UIColor.lightGray, for: UIControlState.normal)
+
+        setupSpeechRecorder(language: defaultLanguage)
+        
         timerLabel.layer.masksToBounds = true
         timerLabel.layer.cornerRadius = 30
         
@@ -106,6 +105,16 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, UIActionShee
         
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if showAd {
+            showAd = false
+            let App = UIApplication.shared.delegate as! AppDelegate
+            App.gViewController = self
+            App.showAdmobInterstitial()
+        }
+
+    }
     @IBAction func microphoneButtonAction(_ sender: Any) {
         if Reachability.isConnectedToNetwork() {
             if audioEngine.isRunning {
@@ -115,8 +124,6 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, UIActionShee
                 microphoneButton.isEnabled = false
                 microphoneButton.setTitle("Start Recording", for: .normal)
                 reset()
-                saveButton.isEnabled = true
-                saveButton.setTitleColor(UIColor.white, for: UIControlState.normal)
                 endTimer()
             } else {
                 endTimer()
@@ -195,8 +202,6 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, UIActionShee
             if error != nil || isFinal {
                 self.audioEngine.stop()
                 self.endTimer()
-                self.saveButton.isEnabled = true
-                self.saveButton.setTitleColor(UIColor.white, for: UIControlState.normal)
                 inputNode.removeTap(onBus: 0)
                 
                 self.recognitionRequest = nil
@@ -241,11 +246,26 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, UIActionShee
             self.timerLabel.transform = CGAffineTransform(scaleX: 1, y: 1)
         }
         timerLabel.text = "\(totalTime)"
+        if totalTime == timeLimit {
+            timeout()
+        }
+    }
+    
+    func timeout(){
+        audioEngine.stop()
+        recognitionRequest?.endAudio()
+        microphoneButton.isEnabled = false
+        microphoneButton.setTitle("Start Recording", for: .normal)
+        confidenceForText.removeAll()
+        totalTime = 0
+        countdownTimer.invalidate()
     }
     
     func endTimer() {
+        saveAction()
         totalTime = 0
         countdownTimer.invalidate()
+        
     }
 
     func startBlinkig(){
@@ -331,7 +351,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, UIActionShee
         self.present(optionMenuController, animated: true, completion: nil)
     }
     
-    @IBAction func saveAction(_ sender: Any) {
+    func saveAction() {
         
         if textView.text.count > 1 {
             let context = appDelegare.persistentContainer.viewContext

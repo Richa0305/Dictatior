@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		93B2E57BAF71A37CD7CF278D /* Pods_DictationTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3599DA72E8975EE87753CB90 /* Pods_DictationTimer.framework */; };
+		DA331E8C21B2D33F007887F7 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA331E8B21B2D33F007887F7 /* WelcomeViewController.swift */; };
 		DA91EC9D20B8318D00C232DF /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA91EC9C20B8318D00C232DF /* FirebaseCore.framework */; };
 		DAB9671F20B84ABE00CBBAA3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAB9671E20B8496E00CBBAA3 /* GoogleService-Info.plist */; };
 		DACEAA6720B7F24600E2A2EB /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACEAA6620B7F24600E2A2EB /* Reachability.swift */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		3599DA72E8975EE87753CB90 /* Pods_DictationTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DictationTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DA8C48A6BD5BE0F6D4EF509 /* Pods-DictationTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DictationTimer.release.xcconfig"; path = "Pods/Target Support Files/Pods-DictationTimer/Pods-DictationTimer.release.xcconfig"; sourceTree = "<group>"; };
+		DA331E8B21B2D33F007887F7 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		DA91EC9C20B8318D00C232DF /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB9671E20B8496E00CBBAA3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DACEAA6620B7F24600E2A2EB /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				EA7A241220B7177600003041 /* HistoryModel.swift */,
 				EA7A241420B71E8200003041 /* HistoryTableViewCell.swift */,
 				DACEAA6620B7F24600E2A2EB /* Reachability.swift */,
+				DA331E8B21B2D33F007887F7 /* WelcomeViewController.swift */,
 			);
 			path = DictationTimer;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DACEAA6720B7F24600E2A2EB /* Reachability.swift in Sources */,
+				DA331E8C21B2D33F007887F7 /* WelcomeViewController.swift in Sources */,
 				EA7A241520B71E8200003041 /* HistoryTableViewCell.swift in Sources */,
 				EA67F5C720B6DABE003C1529 /* HistoryTableViewController.swift in Sources */,
 				EA7A241320B7177600003041 /* HistoryModel.swift in Sources */,

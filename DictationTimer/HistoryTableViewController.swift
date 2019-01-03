@@ -13,12 +13,14 @@ class HistoryTableViewController: UITableViewController {
 
     let appDelegare = UIApplication.shared.delegate as! AppDelegate
     var historyArr = [HistoryModel]()
+    var showAd = true
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         let context = appDelegare.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "History")
         //request.predicate = NSPredicate(format: "age = %@", "12")
@@ -42,6 +44,16 @@ class HistoryTableViewController: UITableViewController {
             
             print("Failed")
         }
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if showAd {
+            showAd = false
+            let App = UIApplication.shared.delegate as! AppDelegate
+            App.gViewController = self
+            App.showAdmobInterstitial()
+        }
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
